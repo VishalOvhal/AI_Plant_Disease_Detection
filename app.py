@@ -399,7 +399,7 @@ if uploaded_file is not None:
     predicted_class = class_names[predicted_index]
     confidence = float(np.max(prediction))
 
-    if confidence < 0.60:
+    if confidence < 0.50:
         st.warning(translations[language]["low_conf"])
     else:
         st.markdown(f"""
@@ -428,6 +428,7 @@ if uploaded_file is not None:
             """, unsafe_allow_html=True)
 
             st.success(translations[language]["complete"])
+
 
 
 
